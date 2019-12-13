@@ -1,11 +1,11 @@
 #include "Phong.hpp"
-
-Phong::Phong()
+//Contructor
+Phong::Phong(void)
     : Material(),
       ambient_brdf(new Lambertian),
       diffuse_brdf(new Lambertian),
       specular_brdf(new GlossySpecular) {}
-
+//Copy Constructor
 Phong::Phong(const Phong& other) : Material() {
   if (other.ambient_brdf) {
     ambient_brdf = other.ambient_brdf->clone();
@@ -23,7 +23,7 @@ Phong::Phong(const Phong& other) : Material() {
     specular_brdf = NULL;
   }
 }
-
+//Assignment Operator
 Phong& Phong::operator=(const Phong& rhs) {
   if (this == &rhs) {
     return (*this);
@@ -54,10 +54,11 @@ Phong& Phong::operator=(const Phong& rhs) {
 
   return *this;
 }
-
+//Virtual copy contructor
 Phong* Phong::clone() const { return (new Phong(*this)); }
 
-Phong::~Phong() {
+//Destructor
+Phong::~Phong(void) {
   if (ambient_brdf) {
     delete ambient_brdf;
     ambient_brdf = NULL;

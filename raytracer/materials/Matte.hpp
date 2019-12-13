@@ -7,16 +7,26 @@
 #include "Material.hpp"
 
 class Matte : public Material {
+private:
+  Lambertian* ambient_brdf;
+
+  Lambertian* diffuse_brdf;
  public:
-  // constructor
-  Matte();
-  // copy constructor
-  Matte(const Matte& m);
+  
+  Matte(void); // constructor
+
+  
+  Matte(const Matte& m); // copy constructor
+  
   // virtual copy constructor
   virtual Material* clone() const;
+
+    //assignment operator.
+
   Matte& operator=(const Matte& rhs);
-  // destructor
-  ~Matte();
+  
+  ~Matte(void);   // destructor
+
   // setters
   void set_ka(const float k);
   void set_kd(const float k);
@@ -26,8 +36,6 @@ class Matte : public Material {
 
   virtual RGBColor shade(const ShadeInfo& sr);
 
- private:
-  Lambertian* ambient_brdf;
-  Lambertian* diffuse_brdf;
+ 
 };
 

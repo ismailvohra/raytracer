@@ -1,6 +1,11 @@
 #include "Reflective.hpp"
 
-Reflective::Reflective() : Phong(), reflective_brdf(new PerfectSpecular) {}
+// ---------------------------------------------------------------- default constructor
+
+Reflective::Reflective (void)
+	:	Phong(),
+		reflective_brdf(new PerfectSpecular)
+{}
 
 Reflective::Reflective(const Reflective& rm) : Phong(rm) {
   if (rm.reflective_brdf) {
@@ -30,7 +35,7 @@ Reflective& Reflective::operator=(const Reflective& rhs) {
 
 Reflective* Reflective::clone() const { return (new Reflective(*this)); }
 
-Reflective::~Reflective() {
+Reflective::~Reflective(void) {
   if (reflective_brdf) {
     delete reflective_brdf;
     reflective_brdf = NULL;
@@ -52,9 +57,20 @@ RGBColor Reflective::shade(const ShadeInfo& sinfo) {
   return (L);
 }
 
+// ---------------------------------------------------------------- set_kr
+
 void Reflective::set_kr(const float k) { reflective_brdf->set_kr(k); }
+
+// ---------------------------------------------------------------- set_cr
+
 void Reflective::set_cr(const RGBColor& c) { reflective_brdf->set_cr(c); }
+// ---------------------------------------------------------------- set_cr
+
 void Reflective::set_cr(const float r, const float g, const float b) {
   reflective_brdf->set_cr(r, g, b);
 }
+
+
+// ---------------------------------------------------------------- set_cr
+
 void Reflective::set_cr(const float c) { reflective_brdf->set_cr(c); }
