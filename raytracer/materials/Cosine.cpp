@@ -1,13 +1,26 @@
 #include "Cosine.hpp"
 #include "../utilities/ShadeInfo.hpp"
 
-Cosine::Cosine() : color{0, 0, 0} {}
+Cosine::Cosine (void)
+	:   color(RGBColor(0))
+{}
 
-Cosine::Cosine(float c) : color{c} {}
+// ---------------------------------------------------------------- constructor
 
-Cosine::Cosine(float r, float g, float b) : color{r, g, b} {}
+Cosine::Cosine (float c)
+	:
+		color(RGBColor(c))
+{}
 
-Cosine::Cosine(const RGBColor& c) : color{c} {}
+Cosine::Cosine (float r, float g, float b)
+	:
+		color(RGBColor(r,g,b))
+{}
+
+Cosine::Cosine (const RGBColor &c)
+	:
+		color(c)
+{}
 
 Cosine* Cosine::clone() const { return new Cosine(*this); }
 
