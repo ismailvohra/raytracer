@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_CAMERAS_CAMERA_HPP_
-#define RAYTRACER_CAMERAS_CAMERA_HPP_
-
+#pragma once
 /**
    This file declares the Camera class which is an abstract class for concrete
    cameras to inherit from. A camera views the world through a view plane.
@@ -30,4 +28,3 @@ class Camera {
   virtual Vector3D get_direction(const Point3D& p) const = 0;
 };
 
-#endif  // RAYTRACER_CAMERAS_CAMERA_HPP_

@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_CAMERAS_PERSPECTIVE_HPP_
-#define RAYTRACER_CAMERAS_PERSPECTIVE_HPP_
-
+#pragma once
 /**
    This file declares the Perspective class which represents a perspective
    viewing camera.
@@ -18,30 +16,29 @@ class Perspective : public Camera {
  public:
   // Constructors.
 
-  // set pos to origin.
-  Perspective() = default;
+  Perspective() = default;   // set pos to origin.
 
-  // set pos to (c, c, c).
-  explicit Perspective(float c);
 
-  // set pos to (x, y, z)
-  Perspective(float x, float y, float z);
+  explicit Perspective(float c);   // set pos to (c, c, c).
 
-  // set pos parallel to pt.
-  explicit Perspective(const Point3D& pt);
+
+  Perspective(float x, float y, float z);    // set pos to (x, y, z)
+
+
+  explicit Perspective(const Point3D& pt);    // set pos parallel to pt.
+
 
   // Copy constuctor and assignment operator.
   Perspective(const Perspective& camera) = default;
   Perspective& operator=(const Perspective& other) = default;
 
-  // Virtual copy constructor.
-  virtual Perspective* clone() const;
+  virtual Perspective* clone() const;    // Virtual copy constructor.
 
-  // Desctructor.
-  virtual ~Perspective() = default;
+
+  virtual ~Perspective() = default;    // Desctructor.
+
 
   // Get direction of projection for a point.
   virtual Vector3D get_direction(const Point3D& p) const;
 };
 
-#endif  // RAYTRACER_CAMERAS_PERSPECTIVE_HPP_
