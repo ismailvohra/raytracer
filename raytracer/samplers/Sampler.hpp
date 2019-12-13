@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_SAMPLERS_SAMPLER_HPP_
-#define RAYTRACER_SAMPLERS_SAMPLER_HPP_
+#pragma once
 
 /**
    This file declares the Sampler class which is an abstract class for concrete
@@ -22,8 +21,6 @@ class Ray;
 
 class Sampler {
  protected:
-  // Note: we do not own either of these pointers, so are not responsible
-  // for allocating/deallocating their space
   Camera* camera_ptr;        // the camera that decides the projectors.
   ViewPlane* viewplane_ptr;  // the view plane through which rays are shot.z
 
@@ -50,5 +47,3 @@ class Sampler {
   // Returns the number of rays per pixel cast by the sampler
   virtual size_t num_rays() const = 0;
 };
-
-#endif  // RAYTRACER_SAMPLERS_SAMPLER_HPP_
