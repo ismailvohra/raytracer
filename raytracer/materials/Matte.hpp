@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_MATERIALS_MATTE_HPP_
-#define RAYTRACER_MATERIALS_MATTE_HPP_
+#pragma once
 
 #include "../brdfs/Lambertian.hpp"
 #include "../lights/Light.hpp"
@@ -32,4 +31,3 @@ class Matte : public Material {
   Lambertian* diffuse_brdf;
 };
 
-#endif  // RAYTRACER_MATERIALS_MATTE_HPP_

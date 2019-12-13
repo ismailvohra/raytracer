@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_MATERIALS_PHONG_HPP_
-#define RAYTRACER_MATERIALS_PHONG_HPP_
+#pragma once
 
 #include "../brdfs/GlossySpecular.hpp"
 #include "../brdfs/Lambertian.hpp"
@@ -23,4 +22,3 @@ class Phong : public Material {
   virtual RGBColor shade(const ShadeInfo& sinfo);
 };
 
-#endif  // RAYTRACER_MATERIALS_PHONG_HPP_

@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_MATERIALS_COSINE_HPP_
-#define RAYTRACER_MATERIALS_COSINE_HPP_
+#pragma once
 
 /**
    This file declares the Cosine class which represents a simple cosine
@@ -42,4 +41,3 @@ class Cosine : public Material {
   virtual RGBColor shade(const ShadeInfo& sinfo);
 };
 
-#endif  // RAYTRACER_MATERIALS_COSINE_HPP_

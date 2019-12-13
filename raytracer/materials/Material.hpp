@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_MATERIALS_MATERIAL_HPP_
-#define RAYTRACER_MATERIALS_MATERIAL_HPP_
+#pragma once
 
 /**
    This file declares the Material class which is an abstract class for concrete
@@ -30,4 +29,3 @@ class Material {
   virtual RGBColor shade(const ShadeInfo& sinfo) = 0;
 };
 
-#endif  // RAYTRACER_MATERIALS_MATERIAL_HPP_
