@@ -6,19 +6,34 @@
 #include "Phong.hpp"
 
 class Reflective : public Phong {
+private:
+  PerfectSpecular* reflective_brdf;
+
  public:
-  Reflective();
+ //Constructor
+  Reflective(void);
+
+  // Copy constuctor and assignment operator.
+
   Reflective(const Reflective& rm);
   Reflective& operator=(const Reflective& rhs);
+  
+  //Virtual Copy Constructor
   virtual Reflective* clone() const;
-  virtual ~Reflective();
+
+//Destructor
+  virtual ~Reflective(void);
+
   void set_kr(const float k);
+
   void set_cr(const RGBColor& c);
+
   void set_cr(const float r, const float g, const float b);
+  
   void set_cr(const float c);
+
   virtual RGBColor shade(const ShadeInfo& sinfo);
 
- private:
-  PerfectSpecular* reflective_brdf;
+ 
 };
 

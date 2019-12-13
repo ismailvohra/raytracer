@@ -1,7 +1,10 @@
 #include "Matte.hpp"
 
-Matte::Matte()
-    : Material(), ambient_brdf(new Lambertian), diffuse_brdf(new Lambertian) {}
+Matte::Matte (void)
+	:	Material(),
+		ambient_brdf(new Lambertian),
+		diffuse_brdf(new Lambertian)
+{}
 
 Matte::Matte(const Matte& m) : Material(m) {
   if (m.ambient_brdf) {
@@ -68,17 +71,34 @@ RGBColor Matte::shade(const ShadeInfo& sr) {
 
   return L;
 }
+// ---------------------------------------------------------------- set_ka
+// this sets Lambertian::kd
+// there is no Lambertian::ka data member because ambient reflection 
+// is diffuse reflection
 
 void Matte::set_ka(const float ka) { ambient_brdf->set_kd(ka); }
+
+
+// ---------------------------------------------------------------- set_kd
+// this also sets Lambertian::kd, but for a different Lambertian object
+
 void Matte::set_kd(const float kd) { diffuse_brdf->set_kd(kd); }
+
+// ---------------------------------------------------------------- set_cd
+
 void Matte::set_cd(const RGBColor c) {
   ambient_brdf->set_cd(c);
   diffuse_brdf->set_cd(c);
 }
+// ---------------------------------------------------------------- set_cd
+
 void Matte::set_cd(const float r, const float g, const float b) {
   ambient_brdf->set_cd(r, g, b);
   diffuse_brdf->set_cd(r, g, b);
 }
+
+// ---------------------------------------------------------------- set_cd
+
 void Matte::set_cd(const float c) {
   ambient_brdf->set_cd(c);
   diffuse_brdf->set_cd(c);

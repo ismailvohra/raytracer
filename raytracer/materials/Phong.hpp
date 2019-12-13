@@ -14,11 +14,17 @@ class Phong : public Material {
   GlossySpecular* specular_brdf;
 
  public:
-  Phong();
+  Phong(void); //Constructor
+
+   // Copy constuctor and assignment operator.
   Phong(const Phong& other);
   Phong& operator=(const Phong& other);
+  
+  //Virtual Copy Contructor
   virtual Phong* clone() const;
-  virtual ~Phong();
+
+  virtual ~Phong(void); //Destructor
+
   virtual RGBColor shade(const ShadeInfo& sinfo);
 };
 
