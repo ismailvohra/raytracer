@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_SAMPLERS_SIMPLE_HPP_
-#define RAYTRACER_SAMPLERS_SIMPLE_HPP_
+#pragma once
 
 /**
    This file declares the Simple class which represents a simple sampler.
@@ -34,5 +33,3 @@ class Simple : public Sampler {
 
   size_t num_rays() const;
 };
-
-#endif  // RAYTRACER_SAMPLERS_SIMPLE_HPP_
