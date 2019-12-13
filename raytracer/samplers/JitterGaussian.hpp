@@ -1,12 +1,13 @@
-#ifndef RAYTRACER_SAMPLERS_JITTERGAUSSIAN_HPP_
-#define RAYTRACER_SAMPLERS_JITTERGAUSSIAN_HPP_
+#pragma once
 
 #include <stddef.h>
 #include <random>
 #include <vector>
+
 #include "Sampler.hpp"
 
-class JitterGaussian : public Sampler {
+class JitterGaussian : public Sampler
+{
  private:
   size_t degree;
   double step;
@@ -36,5 +37,3 @@ class JitterGaussian : public Sampler {
 
   double gaussian(double x) const;
 };
-
-#endif  // RAYTRACER_SAMPLERS_JITTERGAUSSIAN_HPP_

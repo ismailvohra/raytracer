@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_SAMPLERS_REGULARBOX_HPP_
-#define RAYTRACER_SAMPLERS_REGULARBOX_HPP_
+#pragma once
 
 #include <stddef.h>
 #include <vector>
@@ -30,5 +29,3 @@ class RegularBox : public Sampler {
 
   size_t num_rays() const;
 };
-
-#endif  // RAYTRACER_SAMPLERS_REGULARBOX_HPP_

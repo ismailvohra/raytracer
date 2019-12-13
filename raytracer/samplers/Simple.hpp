@@ -12,8 +12,10 @@
 #include <vector>
 #include "Sampler.hpp"
 
-class Simple : public Sampler {
+class Simple : public Sampler
+{
  public:
+
   // Constructors.
   Simple() = default;
   Simple(Camera* c_ptr, ViewPlane* v_ptr);
