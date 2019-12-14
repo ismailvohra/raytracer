@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_BRDFS_BRDF_HPP_
-#define RAYTRACER_BRDFS_BRDF_HPP_
-
+#pragma once
 #include <math.h>
 #include <random>
 #include "../utilities/Constants.hpp"
@@ -24,11 +22,11 @@ class BRDF {
   BRDF(const BRDF& camera) = default;
   BRDF& operator=(const BRDF& other) = default;
 
-  // Virtual copy constructor.
-  virtual BRDF* clone() const = 0;
+  virtual BRDF* clone() const = 0;    // Virtual copy constructor.
 
-  // Desctructor.
-  virtual ~BRDF() = default;
+
+  virtual ~BRDF() = default;   // Desctructor.
+
 
   // Get colors.
   virtual RGBColor f(const ShadeInfo& sinfo, const Vector3D& wo,
@@ -63,4 +61,3 @@ inline Point3D BRDF::sample_hemisphere() const {
   return Point3D(pu, pv, pw);
 }
 
-#endif  // RAYTRACER_BRDFS_BRDF_HPP_
