@@ -1,7 +1,8 @@
 #include "Geometry.hpp"
 
-Geometry::Geometry() : material_ptr{nullptr} {}
-
+Geometry::Geometry(void)
+	: material_ptr(NULL)
+{}
 Geometry::Geometry(const Geometry& object)
     : material_ptr{object.get_material()->clone()} {}
 

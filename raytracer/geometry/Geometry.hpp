@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_GEOMETRY_GEOMETRY_HPP_
-#define RAYTRACER_GEOMETRY_GEOMETRY_HPP_
-
+#pragma once
 /**
    This file declares the Geometry class which is an abstract class from which
    other concrete geometric objects will inherit.
@@ -45,4 +43,3 @@ class Geometry {
   virtual BoundingBox get_bounding_box() const = 0;
 };
 
-#endif  // RAYTRACER_GEOMETRY_GEOMETRY_HPP_

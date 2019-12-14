@@ -5,10 +5,19 @@
 #include "../utilities/ShadeInfo.hpp"
 #include "../utilities/Vector3D.hpp"
 
-Plane::Plane() : a{0, 0, 0}, n{0, 0, 1} {}
+Plane::Plane()
+	:	a(0,0,0),
+		n(0, 0, 1)
+{}
 
 Plane::Plane(const Point3D& pt, const Vector3D& n)
-    : a{pt}, n{Vector3D(n).normalize()} {}
+{
+    this->a = pt;
+
+    Vector3D vect(n);
+    vect.normalize();
+    this->n = vect;
+}
 
 Plane* Plane::clone() const { return new Plane(*this); }
 
