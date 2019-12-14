@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_ACCELERATION_KDNODE_HPP_
-#define RAYTRACER_ACCELERATION_KDNODE_HPP_
+#pragma once
 
 /**
  * This file declares the KDNode class, which represents a node in the
@@ -11,7 +10,8 @@
 #include "../utilities/BoundingBox.hpp"
 #include "../utilities/Point3D.hpp"
 
-class KDNode {
+class KDNode
+{
  public:
   KDNode* left;
   KDNode* right;
@@ -35,5 +35,3 @@ class KDNode {
 
   static void build_kd_tree(KDNode* node);
 };
-
-#endif  // RAYTRACER_ACCELERATION_KDNODE_HPP_

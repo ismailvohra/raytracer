@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_ACCELERATION_ACCELERATION_HPP_
-#define RAYTRACER_ACCELERATION_ACCELERATION_HPP_
+#pragma once
 
 /**
  * This file declares the Acceleration class which is an abstract class for
@@ -10,7 +9,8 @@
 
 class World;
 
-class Acceleration {
+class Acceleration
+{
  protected:
   World* world;
 
@@ -29,5 +29,3 @@ class Acceleration {
   // Calculates what object a Ray hits
   virtual ShadeInfo hit_objects(const Ray& ray) = 0;
 };
-
-#endif  // RAYTRACER_ACCELERATION_ACCELERATION_HPP_

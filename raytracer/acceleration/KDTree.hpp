@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_ACCELERATION_KDTREE_HPP_
-#define RAYTRACER_ACCELERATION_KDTREE_HPP_
+#pragma once
 
 #include "../utilities/Ray.hpp"
 #include "../utilities/ShadeInfo.hpp"
@@ -7,7 +6,8 @@
 #include "Acceleration.hpp"
 #include "KDNode.hpp"
 
-class KDTree : public Acceleration {
+class KDTree : public Acceleration
+{
  protected:
   World* world_ptr;
   KDNode* root_node;
@@ -27,5 +27,3 @@ class KDTree : public Acceleration {
   // Calculates what object a Ray hits
   virtual ShadeInfo hit_objects(const Ray& ray);
 };
-
-#endif  // RAYTRACER_ACCELERATION_KDTREE_HPP_
