@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_CONSTANTS_HPP_
-#define RAYTRACER_UTILITIES_CONSTANTS_HPP_
+#pragma once
 
 /**
     This file caches common values and constants.
@@ -46,5 +45,3 @@ const float invRAND_MAX = 1.0 / static_cast<float>(RAND_MAX);
 const size_t X_AXIS = 0;
 const size_t Y_AXIS = 1;
 const size_t Z_AXIS = 2;
-
-#endif  // RAYTRACER_UTILITIES_CONSTANTS_HPP_

@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_RAY_HPP_
-#define RAYTRACER_UTILITIES_RAY_HPP_
+#pragma once
 
 /**
    This file declares the class Ray which represents a ray.
@@ -30,5 +29,3 @@ class Ray {
   // Destructor.
   ~Ray() = default;
 };
-
-#endif  // RAYTRACER_UTILITIES_RAY_HPP_

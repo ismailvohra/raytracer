@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_RGBCOLOR_HPP_
-#define RAYTRACER_UTILITIES_RGBCOLOR_HPP_
+#pragma once
 
 /**
    This file declares the class RGBColor which represents an RGB color.
@@ -44,5 +43,3 @@ class RGBColor {
 
 // Front multiplication by a double.
 RGBColor operator*(const double a, const RGBColor& c);
-
-#endif  // RAYTRACER_UTILITIES_RGBCOLOR_HPP_
