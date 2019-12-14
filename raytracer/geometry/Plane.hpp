@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_GEOMETRY_PLANE_HPP_
-#define RAYTRACER_GEOMETRY_PLANE_HPP_
-
+#pragma once
 /**
    This file declares the Plane class which represents a plane defined by an
    included point and its normal.
@@ -30,17 +28,16 @@ class Plane : public Geometry {
   Plane(const Plane& object) = default;
   Plane& operator=(const Plane& rhs) = default;
 
-  // Destructor.
-  virtual ~Plane() = default;
+  virtual ~Plane() = default;   // Destructor.
 
-  // Virtual copy constructor.
-  virtual Plane* clone() const;
 
-  // Bounding box computation.
-  virtual BoundingBox get_bounding_box() const;
+  virtual Plane* clone() const;   // Virtual copy constructor.
+
+
+  virtual BoundingBox get_bounding_box() const;   // Bounding box computation.
+
 
   // Ray intersection. Set t and sinfo as per intersection with this object.
   virtual bool hit(const Ray& ray, ShadeInfo& s) const;
 };
 
-#endif  // RAYTRACER_GEOMETRY_PLANE_HPP_

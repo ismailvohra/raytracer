@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_GEOMETRY_SMOOTHTRIANGLE_HPP_
-#define RAYTRACER_GEOMETRY_SMOOTHTRIANGLE_HPP_
-
+#pragma once
 /**
    This file declares the SmoothTriangle class which represents a triangle
    defined by its 3 vertices and 3 normal points.
@@ -31,11 +29,10 @@ class SmoothTriangle : public Geometry {
   SmoothTriangle(const SmoothTriangle& object) = default;
   SmoothTriangle& operator=(const SmoothTriangle& rhs) = default;
 
-  // Destructor.
-  virtual ~SmoothTriangle() = default;
+  virtual ~SmoothTriangle() = default;    // Destructor.
 
-  // Virtual copy constructor.
-  virtual SmoothTriangle* clone() const;
+
+  virtual SmoothTriangle* clone() const;    // Virtual copy constructor.
 
   // Ray intersection. Set sinfo as per intersection with this object.
   virtual bool hit(const Ray& ray, ShadeInfo& s) const;
@@ -47,4 +44,3 @@ class SmoothTriangle : public Geometry {
   Vector3D interpolate_normal(const double beta, const double gamma) const;
 };
 
-#endif  // RAYTRACER_GEOMETRY_SMOOTHTRIANGLE_HPP_

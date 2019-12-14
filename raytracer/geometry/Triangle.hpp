@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_GEOMETRY_TRIANGLE_HPP_
-#define RAYTRACER_GEOMETRY_TRIANGLE_HPP_
-
+#pragma once
 /**
    This file declares the Triangle class which represents a triangle defined by
    its 3 vertices.
@@ -29,11 +27,11 @@ class Triangle : public Geometry {
   Triangle(const Triangle& object) = default;
   Triangle& operator=(const Triangle& rhs) = default;
 
-  // Destructor.
-  virtual ~Triangle() = default;
+  virtual ~Triangle() = default;    // Destructor.
 
-  // Virtual copy constructor.
-  virtual Triangle* clone() const;
+
+  virtual Triangle* clone() const;    // Virtual copy constructor.
+
 
   // Ray intersection. Set sinfo as per intersection with this object.
   virtual bool hit(const Ray& ray, ShadeInfo& s) const;
@@ -42,4 +40,3 @@ class Triangle : public Geometry {
   virtual BoundingBox get_bounding_box() const;
 };
 
-#endif  // RAYTRACER_GEOMETRY_TRIANGLE_HPP_

@@ -4,10 +4,15 @@
 #include "../utilities/Point3D.hpp"
 #include "../utilities/Vector3D.hpp"
 
-Sphere::Sphere() : c{Point3D()}, r{0} {}
-
-Sphere::Sphere(const Point3D& center, double radius) : c{center}, r{radius} {}
-
+Sphere::Sphere()
+	:	c(Point3D()),
+		r(0)
+{}
+Sphere::Sphere(const Point3D &center, double radius)
+	:
+		c(center),
+		r(radius)
+{}
 Sphere* Sphere::clone() const { return new Sphere(*this); }
 
 bool Sphere::hit(const Ray& ray, ShadeInfo& s) const {

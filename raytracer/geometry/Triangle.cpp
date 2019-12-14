@@ -7,10 +7,15 @@
 #include "../utilities/Vector3D.hpp"
 
 Triangle::Triangle()
-    : norm{0, 0, 1} {}  // Arbitrarily choose a normal vector along z axis
+    : norm{0, 0, 1} 
+{}  // Arbitrarily choose a normal vector along z axis
 
 Triangle::Triangle(const Point3D& a, const Point3D& b, const Point3D& c)
-    : v0{a}, v1{b}, v2{c}, norm{((b - a) ^ (c - a)).normalize()} {}
+    : v0{a}, 
+    v1{b}, 
+    v2{c}, 
+    norm{((b - a) ^ (c - a)).normalize()} 
+{}
 
 Triangle* Triangle::clone() const { return new Triangle(*this); }
 
