@@ -2,12 +2,14 @@
 #include "../utilities/Point3D.hpp"
 
 GlossySpecular::GlossySpecular()
-    : BRDF(), ks(0.0), cs(1.0) {  //, sampler(NULL) {
+    : BRDF(), ks(0.0), cs(1.0) 
+    {  //, sampler(NULL) {
   BRDF::exp = 3.0;
 }
 
 GlossySpecular::GlossySpecular(const GlossySpecular& gs)
-    : BRDF(), ks(gs.ks), cs(gs.cs) {}  //, sampler(NULL) {}
+    : BRDF(), ks(gs.ks), cs(gs.cs) 
+{} 
 
 GlossySpecular* GlossySpecular::clone() const {
   return (new GlossySpecular(*this));
@@ -75,15 +77,19 @@ RGBColor GlossySpecular::sample_f(const ShadeInfo& sinfo, const Vector3D& wo,
 RGBColor GlossySpecular::rho(const ShadeInfo&, const Vector3D&) const {
   return black;
 }
-
+//set ks
 void GlossySpecular::set_ks(const float k) { ks = k; }
+//set exp value
 void GlossySpecular::set_exp(const float e) { exp = e; }
+//set cs
 void GlossySpecular::set_cs(const RGBColor& c) { cs = c; }
+//set cs
 void GlossySpecular::set_cs(const float r, const float g, const float b) {
   cs.r = r;
   cs.g = g;
   cs.b = b;
 }
+//set cs
 void GlossySpecular::set_cs(const float c) {
   cs.r = c;
   cs.g = c;

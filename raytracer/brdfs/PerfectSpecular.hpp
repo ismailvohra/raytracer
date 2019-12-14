@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_BRDFS_PERFECTSPECULAR_HPP_
-#define RAYTRACER_BRDFS_PERFECTSPECULAR_HPP_
-
+#pragma once
 #include "BRDF.hpp"
 
 class PerfectSpecular : public BRDF {
@@ -12,10 +10,10 @@ class PerfectSpecular : public BRDF {
   // constructor
   PerfectSpecular();
   PerfectSpecular(const PerfectSpecular& ps);
-  // virtual copy constructor
-  virtual PerfectSpecular* clone() const;
-  // destructor
-  virtual ~PerfectSpecular() = default;
+  virtual PerfectSpecular* clone() const;    // virtual copy constructor
+
+  virtual ~PerfectSpecular() = default;    // destructor
+
   virtual RGBColor f(const ShadeInfo& sinfo, const Vector3D& wo,
                      const Vector3D& wi) const;
   virtual RGBColor sample_f(const ShadeInfo& sinfo, const Vector3D& wo,
@@ -30,4 +28,3 @@ class PerfectSpecular : public BRDF {
   void set_cr(const float c);
 };
 
-#endif  // RAYTRACER_BRDFS_PERFECTSPECULAR_HPP_

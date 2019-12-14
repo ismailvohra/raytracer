@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_BRDFS_GLOSSYSPECULAR_HPP_
-#define RAYTRACER_BRDFS_GLOSSYSPECULAR_HPP_
-
+#pragma once
 #include "BRDF.hpp"
 
 class GlossySpecular : public BRDF {
@@ -31,4 +29,3 @@ class GlossySpecular : public BRDF {
   void set_cs(const float r, const float g, const float b);
   void set_cs(const float c);
 };
-#endif  // RAYTRACER_BRDFS_GLOSSYSPECULAR_HPP_

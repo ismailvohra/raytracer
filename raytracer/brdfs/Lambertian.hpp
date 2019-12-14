@@ -1,6 +1,4 @@
-#ifndef RAYTRACER_BRDFS_LAMBERTIAN_HPP_
-#define RAYTRACER_BRDFS_LAMBERTIAN_HPP_
-
+#pragma once
 #include "BRDF.hpp"
 
 class Lambertian : public BRDF {
@@ -9,12 +7,11 @@ class Lambertian : public BRDF {
   RGBColor cd;  // diffuse color
 
  public:
-  // constructor
-  Lambertian();
-  // copy constructor
-  Lambertian(const Lambertian& l);
-  // virtual copy constructor
-  virtual Lambertian* clone() const;
+  Lambertian();   // constructor
+  Lambertian(const Lambertian& l);   // copy constructor
+
+  virtual Lambertian* clone() const;    // virtual copy constructor
+
   // destructor
   virtual ~Lambertian() = default;
   virtual RGBColor f(const ShadeInfo& sinfo, const Vector3D& wo,
@@ -32,4 +29,3 @@ class Lambertian : public BRDF {
   void set_cd(const float c);
 };
 
-#endif  // RAYTRACER_BRDFS_LAMBERTIAN_HPP_
