@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_SHADEINFO_HPP_
-#define RAYTRACER_UTILITIES_SHADEINFO_HPP_
+#pragma once
 
 /**
    This file declares the class ShadeInfo which contains all the relevant
@@ -15,7 +14,8 @@
 class Material;
 class World;
 
-class ShadeInfo {
+class ShadeInfo
+{
  public:
   bool hit;                // did the ray hit an object?
   Material* material_ptr;  // nearest material of the hit object.
@@ -36,5 +36,3 @@ class ShadeInfo {
   // Destructor.
   ~ShadeInfo() = default;
 };
-
-#endif  // RAYTRACER_UTILITIES_SHADEINFO_HPP_

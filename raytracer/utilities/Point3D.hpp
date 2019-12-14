@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_POINT3D_HPP_
-#define RAYTRACER_UTILITIES_POINT3D_HPP_
+#pragma once
 
 /**
    This file declares the class Point3D which represents a 3D point.
@@ -55,5 +54,3 @@ class Point3D {
 
 // Scale pt by a factor, s.
 Point3D operator*(const double a, const Point3D& pt);
-
-#endif  // RAYTRACER_UTILITIES_POINT3D_HPP_

@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_IMAGE_HPP_
-#define RAYTRACER_UTILITIES_IMAGE_HPP_
+#pragma once
 
 /**
    This file declares the Image class which is a utility for storing image
@@ -14,7 +13,8 @@
 class ViewPlane;
 class RGBColor;
 
-class Image {
+class Image
+{
  private:
   size_t hres;
   size_t vres;
@@ -35,5 +35,3 @@ class Image {
   // Write image to file in PPM format.
   void write_ppm(std::string path);
 };
-
-#endif  // RAYTRACER_UTILITIES_IMAGE_HPP_

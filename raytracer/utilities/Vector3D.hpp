@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_VECTOR3D_HPP_
-#define RAYTRACER_UTILITIES_VECTOR3D_HPP_
+#pragma once
 
 /**
    This file declares the class Vector3D which represents a 3D vector.
@@ -53,5 +52,3 @@ class Vector3D {
 
 // Scaling.
 Vector3D operator*(const double a, const Vector3D& v);
-
-#endif  // RAYTRACER_UTILITIES_VECTOR3D_HPP_

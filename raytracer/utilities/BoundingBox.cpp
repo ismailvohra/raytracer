@@ -5,59 +5,89 @@
 BoundingBox::BoundingBox(const Point3D& _most_negative,
                          const Point3D& _most_positive)
     : most_negative{Point3D(_most_negative)},
-      most_positive{Point3D(_most_positive)} {
-  // nothing else to do
-}
+      most_positive{Point3D(_most_positive)} {}
 
-BoundingBox BoundingBox::merge(const BoundingBox& other) const {
+BoundingBox BoundingBox::merge(const BoundingBox& other) const
+{
+  /*
+		Merges this BoundingBox to include other BoundingBox
+
+		@param [BoundingBox] other : Any other bounding box
+
+    @return [BoundingBox] : Merged BoundingBox
+	*/
+
   Point3D most_negative_ = Point3D::min(most_negative, other.most_negative);
   Point3D most_positive_ = Point3D::max(most_positive, other.most_positive);
 
   return BoundingBox(most_negative_, most_positive_);
 }
 
-int BoundingBox::max_axis() const {
-  double x_length = most_positive.x - most_negative.x;
-  double y_length = most_positive.y - most_negative.y;
-  double z_length = most_positive.z - most_negative.z;
+int BoundingBox::max_axis() const
+{
+  double xLength = most_positive.x - most_negative.x;
+  double yLength = most_positive.y - most_negative.y;
+  double zLength = most_positive.z - most_negative.z;
 
-  if (x_length >= y_length && x_length >= z_length) {
+  if (xLength >= yLength && xLength >= zLength)
+  {
     return X_AXIS;
   }
 
-  if (y_length >= x_length && y_length >= z_length) {
+  if (yLength >= xLength && yLength >= zLength)
+  {
     return Y_AXIS;
   }
 
   return Z_AXIS;
 }
 
-bool BoundingBox::intersect(const Point3D& point) const {
+bool BoundingBox::intersect(const Point3D& point) const
+{
+  /*
+		Checks if this BBox overlaps/intersects with point
+		
+    @param [Point3D] point: Any point
+
+		@return [bool] True if intersection is found
+	*/
+
   return ((Point3D::min(most_negative, point) == most_negative) &&
           (Point3D::max(most_positive, point) == most_positive));
 }
 
-bool BoundingBox::intersect(const BoundingBox& other) const {
-  bool overlapping_x =
+bool BoundingBox::intersect(const BoundingBox& other) const
+{
+  /*
+		Checks if this BoundingBox overlaps/intersects with other
+		
+    @param [BoundingBox] other: Any other BoundingBox
+
+		@return [bool] True if intersection is found
+	*/
+
+  bool overlappingX =
       BoundingBox::overlapping1D(most_negative.x, most_positive.x,
                                  other.most_negative.x, other.most_positive.x);
-  bool overlapping_y =
+  bool overlappingY =
       BoundingBox::overlapping1D(most_negative.y, most_positive.y,
                                  other.most_negative.y, other.most_positive.y);
-  bool overlapping_z =
+  bool overlappingZ =
       BoundingBox::overlapping1D(most_negative.z, most_positive.z,
                                  other.most_negative.z, other.most_positive.z);
 
-  return overlapping_x && overlapping_y && overlapping_z;
+  return overlappingX && overlappingY && overlappingZ;
 }
 
-double BoundingBox::volume() const {
+double BoundingBox::volume() const
+{
   Vector3D offset = most_positive - most_negative;
   return offset.x * offset.y * offset.z;
 }
 
-bool BoundingBox::hit(const Ray& ray) const {
-  // modified slightly from code by Kevin Suffern
+bool BoundingBox::hit(const Ray& ray) const
+{
+  // Taken from code by Kevin Suffern
   double ox = ray.o.x;
   double oy = ray.o.y;
   double oz = ray.o.z;
@@ -123,7 +153,7 @@ bool BoundingBox::hit(const Ray& ray) const {
   return (t0 < t1 && t1 > kEpsilon);
 }
 
-bool BoundingBox::overlapping1D(double min1, double max1, double min2,
-                                double max2) {
+bool BoundingBox::overlapping1D(double min1, double max1, double min2, double max2)
+{
   return (max1 >= min2 && max2 >= min1);
 }

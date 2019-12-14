@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_CHESSPIECE_HPP_
-#define RAYTRACER_UTILITIES_CHESSPIECE_HPP_
+#pragma once
 
 /**
    This file declares the Image class which is a utility for storing image
@@ -10,7 +9,8 @@
 
 #include <string>
 
-class ChessPiece {
+class ChessPiece
+{
  public:
   std::string name;
   double height;
@@ -26,5 +26,3 @@ class ChessPiece {
   // Destructor
   ~ChessPiece() = default;  // free memory.
 };
-
-#endif  // RAYTRACER_UTILITIES_CHESSPIECE_HPP_

@@ -1,5 +1,4 @@
-#ifndef RAYTRACER_UTILITIES_BOUNDINGBOX_HPP_
-#define RAYTRACER_UTILITIES_BOUNDINGBOX_HPP_
+#pragma once
 
 /**
  * Defines bounding box structure.
@@ -9,7 +8,8 @@
 #include "Point3D.hpp"
 #include "Ray.hpp"
 
-class BoundingBox {
+class BoundingBox
+{
  public:
   Point3D most_negative;
   Point3D most_positive;
@@ -33,5 +33,3 @@ class BoundingBox {
  protected:
   static bool overlapping1D(double min1, double max1, double min2, double max2);
 };
-
-#endif  // RAYTRACER_UTILITIES_BOUNDINGBOX_HPP_
